@@ -1,0 +1,1 @@
+Try fix a dependabot ignore rule
