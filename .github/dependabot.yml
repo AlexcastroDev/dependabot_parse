@@ -19,6 +19,7 @@ updates:
         dependency-type: "development"
     # To prevent Dependabot from automatically updating a dependency, you can use the ignore configuration option.
     # https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#ignore
-    ignore:
-      - dependency-name: "parser"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+    parser:
+      applies-to: version-updates
+      update-types:
+      - "patch"
