@@ -21,4 +21,3 @@ updates:
     # https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#ignore
     ignore:
       - dependency-name: "parser"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
