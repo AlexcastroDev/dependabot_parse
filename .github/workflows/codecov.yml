@@ -1,40 +1,34 @@
 name: Testing check
 
 on:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    branches:
+      - main
+  push:
     branches:
       - main
 
 jobs:
   test:
-    if: github.event.review.state == 'approved'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install Ruby
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.2.2
           bundler-cache: true
 
       - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libvips mupdf mupdf-tools poppler-utils
+        run: bundle install
 
-      - name: install Vendors
-        run: |
-          gem install bundler
-          bundle install
-
-      - name: Rspec
-        run: ruby -Itest specs/app_spec.rb
+      - name: Run tests
+        run: bundle exec rake
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v4.5.0
         with:
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
