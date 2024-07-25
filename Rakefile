@@ -1,7 +1,6 @@
 require 'rake/testtask'
 require 'simplecov'
 
-
 SimpleCov.command_name 'Unit Tests'
 SimpleCov.start
 
