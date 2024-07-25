@@ -9,3 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: hmarr/auto-approve-action@v4
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
