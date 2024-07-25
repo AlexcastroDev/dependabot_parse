@@ -1,13 +1,13 @@
 name: Testing check
 
 on:
-  pull_request_review:
-    types: [submitted]
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    if: github.event.review.state == 'approved'
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
