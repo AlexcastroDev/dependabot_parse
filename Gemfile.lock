@@ -16,6 +16,7 @@ GEM
       rack (>= 3.0.0, < 4)
     rack-session (2.0.0)
       rack (>= 3.0.0)
+    rake (13.2.1)
     ruby2_keywords (0.0.5)
     simplecov (0.22.0)
       docile (~> 1.1)
@@ -33,10 +34,12 @@ GEM
 
 PLATFORMS
   aarch64-linux-musl
+  arm64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
   parser (~> 3.2.2)
+  rake
   simplecov
   sinatra
 
