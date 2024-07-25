@@ -4,13 +4,8 @@ on:
     types: [opened, reopened, labeled, edited]
   pull_request_review:
     types: [dismissed]
-
 jobs:
-  build:
+  auto-approve:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
     steps:
       - uses: hmarr/auto-approve-action@v4
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
