@@ -4,7 +4,7 @@ on:
   pull_request_review:
     types: [submitted]
     branches:
-      - staging
+      - main
 
 jobs:
   test:
