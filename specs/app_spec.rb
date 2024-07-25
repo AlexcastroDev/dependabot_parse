@@ -1,8 +1,6 @@
 require 'test/unit'
 require 'rack/test'
 require_relative '../app'
-require 'simplecov'
-SimpleCov.start
 
 class AppTest < Test::Unit::TestCase
   include Rack::Test::Methods

@@ -22,7 +22,7 @@ jobs:
         run: bundle install
 
       - name: Run tests
-        run: ruby -Itest specs/app_spec.rb
+        run: rake
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
