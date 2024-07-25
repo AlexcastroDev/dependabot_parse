@@ -1,6 +1,5 @@
-require 'test/unit'
-require 'rack/test'
-require_relative '../app'
+require 'test_helper'
+require 'app'
 
 class AppTest < Test::Unit::TestCase
   include Rack::Test::Methods

@@ -1,14 +1,10 @@
+# frozen_string_literal: true
+
 require 'rake/testtask'
-require 'simplecov'
-
-SimpleCov.command_name 'Unit Tests'
-SimpleCov.start
-
-Rake::TestTask.new do |t|
-  t.libs << 'test'
-  t.test_files = FileList['test/**/*_test.rb']
-  t.verbose = true
+Rake::TestTask.new(:test) do |test|
+  test.libs << 'lib' << 'test'
+  test.pattern = 'test/**/*_test.rb'
+  test.verbose = true
 end
 
-desc "Run all tests"
 task default: :test
