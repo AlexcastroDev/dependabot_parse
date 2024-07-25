@@ -7,7 +7,3 @@ end
 get '/about' do
   'About this site'
 end
-
-get '/hello/:name' do
-  "Hello #{params[:name]}"
-end
