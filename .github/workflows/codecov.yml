@@ -3,8 +3,6 @@ name: Testing check
 on:
   pull_request_review:
     types: [submitted]
-    branches:
-      - main
 
 jobs:
   test:
