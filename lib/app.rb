@@ -11,3 +11,7 @@ end
 get '/hello/:name' do
   "Hello #{params[:name]}"
 end
+
+get '/more/*' do
+  params[:splat]
+end
